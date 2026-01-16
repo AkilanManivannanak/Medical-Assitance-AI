@@ -147,3 +147,39 @@ Below are the cited sources used in the report:
 
 ## How to run (recommended repo layout)
 
+python filename.py ( terminal )
+
+# Drive 
+
+**Run (Colab)**
+- Open the notebook/script and ensure datasets are accessible (Drive mount if used).
+- Execute end-to-end pipeline to reproduce metrics and report screenshots.
+
+**Run (local)**
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# Example entrypoint (adjust to your repo)
+python src/run_all.py --patient_id KP20250503-001 --age 48 --gender Male
+```
+---
+
+# Responsible use & limitations
+
+- This system is a screening + decision-support prototype trained on multiple independent public datasets (not a single unified hospital EHR distribution). It should not be used for diagnosis or treatment decisions.
+
+- Known limitations noted in the report include dataset heterogeneity, class imbalance in some diseases, and lack of real-time deployment (API integration). Pneumonia accuracy is currently lower and should be improved with better curation and training strategy.
+
+---
+# Roadmap (next upgrades)
+
+- Add cross-validation + AUC/PR-AUC + calibration (especially for imbalanced datasets).
+- Add leakage checks, strict train/test split hygiene, and dataset versioning.
+- Build a FastAPI service (/predict/tabular, /predict/xray) + Dockerfile.
+- Track experiments with MLflow/W&B and create an eval regression suite.
+- Add unit tests for preprocessing + report generation and CI (GitHub Actions).
+
+---
+
