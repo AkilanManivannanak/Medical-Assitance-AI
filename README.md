@@ -28,8 +28,8 @@ Per-disease test accuracy is summarized below.
 | Stroke | 93.84% |
 | Cystic Fibrosis | 84.21% |
 | Alzheimer’s | 94.42% |
-| Anemia | 100% |
-| Chronic Kidney Disease | 100% |
+| Anemia | 95.46% |
+| Chronic Kidney Disease | 97.56% |
 | Heart Disease | 98.54% |
 | Cancer | 96.49% |
 | Obesity | 95.27% |
